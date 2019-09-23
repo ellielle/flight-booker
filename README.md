@@ -1,24 +1,18 @@
-# README
+# Flight Booker
+### About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The purpose of this [project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms) is to
+create a website with similar functionality to a site that lets you book flights, minus actually booking the flight.
+The goal is to have a chance to work with more advanced forms while I develop the site.
 
-Things you may want to cover:
 
-* Ruby version
+### Getting started
 
-* System dependencies
+#### Requirements:
+* Ruby 2.6.3
+* Rails 5.2.3
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Installation:
+* Clone the repo
+* Run ```$ bundle install --without production``` to install dependencies
+* Run ```$ rails test``` to ensure all tests pass
