@@ -1,16 +1,24 @@
 Airport.delete_all
 Flight.delete_all
 
+def self.create_flight(from_airport, to_airport)
+  Flight.create!(from_airport_id: from_airport.id, to_airport_id: to_airport.id,
+                 departure: (DateTime.now + rand(1..20)), duration: rand(345..680))
+end
 
 # Create Airports
 airport1 = Airport.create!(name: "LaGuardia Airport", code: "LGA")
 airport2 = Airport.create!(name: "John F. Kennedy International Airport", code: "JFK")
 airport3 = Airport.create!(name: "San Francisco International Airport", code: "SFO")
+airport4 = Airport.create!(name: "Heathrow", code: "LHR")
+airport5 = Airport.create!(name: "Gatwick", code: "LGW")
+airport6 = Airport.create!(name: "Los Angeles International", code: "LAX")
 
-# Create Flights
-flight1 = Flight.create!(from_airport_id: airport1.id, to_airport_id: airport3.id,
-                         departure: 3.hours.ago, duration: 293)
-flight2 = Flight.create!(from_airport_id: airport2.id, to_airport_id: airport3.id,
-                         departure: 2.hours.ago, duration: 300)
-flight3 = Flight.create!(from_airport_id: airport3.id, to_airport_id: airport1.id,
-                         departure: 2.hours.from_now, duration: 260)
+# Populate Flights
+flight_arr = [airport1, airport2, airport3, airport4, airport5, airport6]
+1..20.times do
+  from_airport = flight_arr[rand(0..5)]
+  to_airport = flight_arr[rand(0..5)]
+  redo if from_airport == to_airport
+  create_flight(from_airport, to_airport)
+end
