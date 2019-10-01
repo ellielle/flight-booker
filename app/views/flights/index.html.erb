@@ -1,0 +1,11 @@
+<%= form_for :flights, url: flights_path, method: :get do |f| %>
+  <%= f.select :from_code, options_for_select(@airports), prompt: "Flights from",
+               class: 'form-control' %>
+  <%= f.select :to_code, options_for_select(@airports), prompt: "Flights to",
+               class: 'form-control' %>
+  <%= f.select :passengers, options_for_select(1..4), prompt: "Passengers",
+               class: 'form-control' %>
+  <%= f.select :departure, options_for_select(@flight_dates),
+               prompt: "Date & Time", class: 'form-control' %>
+  <%= f.submit "Search Flights", class: "btn btn-primary" %>
+<% end %>
