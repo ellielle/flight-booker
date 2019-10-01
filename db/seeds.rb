@@ -3,7 +3,8 @@ Flight.delete_all
 
 def self.create_flight(from_airport, to_airport)
   Flight.create!(from_airport_id: from_airport.id, to_airport_id: to_airport.id,
-                 departure: (DateTime.now + rand(1..20)), duration: rand(345..680))
+                 departure: Faker::Time.between_dates(from: DateTime.now, to: DateTime.now + 20),
+                 duration: rand(345..680))
 end
 
 # Create Airports
