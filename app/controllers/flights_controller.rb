@@ -3,6 +3,13 @@ class FlightsController < ApplicationController
   end
 
   def index
-    @flight_codes = Airport.all.map(&:code).sort
+    @airports = Airport.all.map { |airport| "#{airport.name} - #{airport.code}"}.sort
+    @flight_dates = Flight.all.map(&:flight_date_format).sort
+  end
+
+  private
+
+  def flight_params
+
   end
 end
