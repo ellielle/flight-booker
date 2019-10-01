@@ -15,7 +15,6 @@ gem 'jquery-rails', '~> 4.3.5'
 gem 'faker'
 gem 'octicons'
 gem 'octicons_helper'
-gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
