@@ -2,7 +2,7 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for :flight, url: flights_path, method: :get do |f| %>
       <div class="form-group">
-        <%= f.label "Flights From", class: 'col-md-12' %>
+        <%= f.label "Flights from", class: 'col-md-12' %>
         <%= f.collection_select :from_airport, @airports, :code, :name, prompt: "",
                     class: 'form-control' %>
       </div>
@@ -17,9 +17,9 @@
                      class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label "Departing time", class: 'col-md-12' %>
+        <%= f.label "Departing date & time", class: 'col-md-12' %>
         <%= f.select :departure, options_for_select(@flight_dates),
-                     prompt: "Date & Time", class: 'form-control' %>
+                     prompt: "", class: 'form-control' %>
       </div>
         <%= f.submit "Search Flights", class: "btn btn-primary" %>
     <% end %>
