@@ -3,12 +3,12 @@
     <%= form_for :flight, url: flights_path, method: :get do |f| %>
       <div class="form-group">
         <%= f.label "Flights from", class: 'col-md-12' %>
-        <%= f.collection_select :from_airport, @airports, :code, :name, prompt: "",
+        <%= f.collection_select :from_airport, Airport.all, :code, :name, prompt: "",
                     class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label "Flights to", class: 'col-md-12' %>
-        <%= f.collection_select :to_airport, @airports, :code, :name, prompt: "",
+        <%= f.collection_select :to_airport, Airport.all, :code, :name, prompt: "",
                      class: 'form-control' %>
       </div>
       <div class="form-group">
@@ -18,7 +18,7 @@
       </div>
       <div class="form-group">
         <%= f.label "Departing date & time", class: 'col-md-12' %>
-        <%= f.select :departure, options_for_select(@flight_dates),
+        <%= f.select :departure, options_for_select(Flight.all.map(&:flight_date_only_format).uniq.sort),
                      prompt: "", class: 'form-control' %>
       </div>
         <%= f.submit "Search Flights", class: "btn btn-primary" %>
