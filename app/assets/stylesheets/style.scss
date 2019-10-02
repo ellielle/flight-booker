@@ -1,12 +1,31 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Variables */
+$form-gray: #6c757d;
+$button-border: #2E2F30;
+$button-hover: #999999;
+
 /* General */
 body {
   margin-top: 50px;
 }
 
 /* Forms */
+.search-form {
+  label {
+    color: $form-gray;
+    font-weight: 400;
+  }
+}
+
+.btn-primary {
+  background-color: $form-gray;
+  border-color: $button-border;
+  &:hover {
+    background-color: $button-hover;
+  }
+}
 
 .search-results {
   margin-top: 45px;
