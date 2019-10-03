@@ -3,6 +3,9 @@
   <%= render 'shared/head' %>
   <body>
     <div class="container">
+      <% flash.each do |message_type, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{message_type}" %>
+      <% end %>
       <%= yield %>
     </div>
     <%= debug(params) %>
