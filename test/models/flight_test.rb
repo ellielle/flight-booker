@@ -9,4 +9,8 @@ class FlightTest < ActiveSupport::TestCase
   test "should be a valid flight" do
     @flight.valid?
   end
+
+  test "test" do
+    airports(:SFO).id == 2
+  end
 end
