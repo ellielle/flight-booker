@@ -1,9 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+SFO:
+  name: San Francisco International Airport
+  code: SFO
 
-one:
-  name: MyString
-  code: MyString
+LGA:
+  name: LaGuardia Airport
+  code: LGA
 
-two:
-  name: MyString
-  code: MyString
+LHR:
+  name: Heathrow
+  code: LHR

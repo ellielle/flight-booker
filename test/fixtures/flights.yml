@@ -1,13 +1,29 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+  <% 3.times do |a| %>
+flight_<%= a %>:
+    from_airport_id: 1
+    to_airport_id: 2
+    departure: <%= DateTime.now + rand(1..15) %>
+    duration: <%= rand(40..500) %>
+  <% end %>
 
-one:
-  start: 1
-  destination: 1
-  time: 2019-09-24 23:59:46
-  duration: 2019-09-24 23:59:46
+    <% 3.times do |b| %>
+flight_<%= b %>:
+  from_airport_id: 2
+  to_airport_id: 3
+  departure: <%= DateTime.now + rand(1..15) %>
+  duration: <%= rand(40..500) %>
+    <% end %>
 
-two:
-  start: 1
-  destination: 1
-  time: 2019-09-24 23:59:46
-  duration: 2019-09-24 23:59:46
+    <% 3.times do |c| %>
+flight_<%= c %>:
+  from_airport_id: 3
+  to_airport_id: 1
+  departure: <%= DateTime.now + rand(1..15) %>
+  duration: <%= rand(40..500) %>
+    <% end %>
+
+duplicate:
+  from_airport_id: 1
+  to_airport_id: 1
+  departure: <%= DateTime.now + 3 %>
+  duration: 300
