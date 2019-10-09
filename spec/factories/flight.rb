@@ -1,15 +1,18 @@
 FactoryBot.define do
-  factory :flight1, class: "Flight" do
+  factory :flight do
     from_airport_id { 1 }
     to_airport_id { 2 }
     duration { 200 }
     departure { Time.now + 3 }
-  end
 
-  factory :flight2, class: "Flight" do
-    from_airport_id { 2 }
-    to_airport_id { 1 }
-    duration { 190 }
-    departure { Time.now + 5 }
+    trait :flight2 do
+      from_airport_id { 2 }
+      to_airport_id { 1 }
+      duration { 190 }
+      departure { Time.now + 5 }
+    end
+
+    before(:create) { create(:airport, :lga) }
+    before(:create) { create(:airport, :sfo) }
   end
 end

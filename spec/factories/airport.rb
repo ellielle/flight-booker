@@ -1,11 +1,16 @@
 FactoryBot.define do
-  factory :lga, class: "Airport" do
-    name { "LaGuardia Airport" }
-    code { "LGA" }
-  end
+  factory :airport do
+    name { "Airport" }
+    code { "ABC" }
 
-  factory :sfo, class: "Airport" do
-    name { "San Francisco Intl Airport" }
-    code { "SFO" }
+    trait :lga do
+      name { "LaGuardia Airport" }
+      code { "LGA" }
+    end
+
+    trait :sfo do
+      name { "San Francisco Intl Airport" }
+      code { "SFO "}
+    end
   end
 end
