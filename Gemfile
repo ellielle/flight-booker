@@ -26,6 +26,7 @@ end
 
 group :test do
   gem 'fuubar'
+  gem 'rails-controller-testing'
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
