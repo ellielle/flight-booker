@@ -17,7 +17,7 @@ airport6 = Airport.create!(name: "Los Angeles International", code: "LAX")
 
 # Populate Flights
 flight_arr = [airport1, airport2, airport3, airport4, airport5, airport6]
-1..100.times do
+1..300.times do
   from_airport = flight_arr[rand(0..5)]
   to_airport = flight_arr[rand(0..5)]
   redo if from_airport == to_airport
