@@ -12,7 +12,7 @@
     <tbody>
     <% found_flights.each do |flight| %>
       <tr>
-        <td><%= f.radio_button :chosen_flight, flight %></td>
+        <td><%= f.radio_button :chosen_flight, flight.id %></td>
         <td><%= "#{flight.from_airport.name} - #{flight.from_airport.code}" %></td>
         <td><%= "#{flight.to_airport.name} - #{flight.to_airport.code}" %></td>
         <td><%= flight.duration %></td>
