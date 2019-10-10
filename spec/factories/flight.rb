@@ -3,13 +3,13 @@ FactoryBot.define do
     from_airport_id { 1 }
     to_airport_id { 2 }
     duration { 200 }
-    departure { Time.now + 3 }
+    departure { 2.days.from_now }
 
     trait :flight2 do
       from_airport_id { 2 }
       to_airport_id { 1 }
       duration { 190 }
-      departure { Time.now + 5 }
+      departure { 5.days.from_now }
     end
 
     before(:create) { create(:airport, :lga) }

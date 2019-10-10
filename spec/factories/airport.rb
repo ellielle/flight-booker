@@ -10,7 +10,7 @@ FactoryBot.define do
 
     trait :sfo do
       name { "San Francisco Intl Airport" }
-      code { "SFO "}
+      code { "SFO"}
     end
   end
 end
