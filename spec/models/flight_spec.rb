@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe Flight, type: :model do
-  context "when created" do
+describe Flight do
+  context "when new flight is created" do
     it "is valid" do
       flight = create(:flight)
       expect(flight).to be_valid
