@@ -1,8 +1,8 @@
 <%= render 'flights/search_form' %>
 
-<div class="search-results col-md-offset-3">
-
+<div class="search-results">
   <% unless @found_flights.blank? %>
+    <h3 class="col-md-offset-3" id="search-header">Search Results</h3>
     <%= render "flights/search_results", found_flights: @found_flights %>
   <% end %>
 </div>
