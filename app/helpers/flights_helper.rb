@@ -8,4 +8,8 @@ module FlightsHelper
       end
     end
   end
+
+  def format_date_time(datetime)
+    datetime.strftime("%-m/%d/%Y - %I:%M%P")
+  end
 end
