@@ -1,3 +1,22 @@
-<% found_flights.each do |flight| %>
-  <%= flight %>
+<%= form_with scope: :results, local: true, method: :get do |f| %>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Flight from</th>
+        <th scope="col">Flight to</th>
+        <th scope="col">Duration (min.)</th>
+        <th scope="col">Date & Time</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% found_flights.each do |flight| %>
+      <tr>
+        <td><%= "#{flight.from_airport.name} - #{flight.from_airport.code}" %></td>
+        <td><%= "#{flight.to_airport.name} - #{flight.to_airport.code}" %></td>
+        <td><%= flight.duration %></td>
+        <td><%= format_date_time(flight.departure)  %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% end %>
