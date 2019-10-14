@@ -13,9 +13,11 @@ class FlightsController < ApplicationController
         @found_flights = flight_with_date
       end
       if @from_airport == @to_airport
-        flash.now[:danger] = "You cannot select the same airport."
+        flash.now[:warning] = "You cannot select the same airport."
       end
+      session[:passengers] = params[:flight][:passengers] unless params[:flight][:passengers].nil?
     else
+      flash.now[:danger] = "Something went wrong."
     end
   end
 
