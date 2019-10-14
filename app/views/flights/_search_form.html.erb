@@ -15,8 +15,8 @@
       </div>
       <div class="form-group">
         <%= f.label "Number of Passengers", class: 'col-md-12' %>
-        <%= f.select :passengers, options_for_select(1..4, required: true,
-                                  selected: keep_selected_forms("passengers")), class: "form-control" %>
+        <%= f.select :num_passengers, options_for_select(1..4, required: true,
+                                  selected: keep_selected_forms("num_passengers")), class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label "Departing date & time", class: 'col-md-12' %>
