@@ -7,10 +7,10 @@ class FlightsController < ApplicationController
       @from_airport = Airport.where(code: params[:flight][:from_airport]).first
       @to_airport = Airport.where(code: params[:flight][:to_airport]).first
       if params[:flight][:any_date] == "1"
-        @found_flights = flight_any_date
+        @found_flights = flight_any_date.sorted_dates
       else
         @depart = params[:flight][:date].to_date
-        @found_flights = flight_with_date
+        @found_flights = flight_with_date.sorted_dates
       end
       if @from_airport == @to_airport
         flash.now[:warning] = "You cannot select the same airport."
