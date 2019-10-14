@@ -3,7 +3,7 @@ class FlightsController < ApplicationController
   end
 
   def index
-    if !params[:flight].nil?
+    unless params[:flight].nil?
       @from_airport = Airport.where(code: params[:flight][:from_airport]).first
       @to_airport = Airport.where(code: params[:flight][:to_airport]).first
       if params[:flight][:any_date] == "1"
@@ -15,9 +15,6 @@ class FlightsController < ApplicationController
       if @from_airport == @to_airport
         flash.now[:warning] = "You cannot select the same airport."
       end
-      session[:passengers] = params[:flight][:passengers] unless params[:flight][:passengers].nil?
-    else
-      flash.now[:danger] = "Something went wrong."
     end
   end
 
