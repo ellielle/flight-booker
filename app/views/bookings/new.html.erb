@@ -1,1 +1,5 @@
-hi
+<% provide(:title, ) %>
+<div class="row col-md-offset-3">
+  <h3 class="mb-3">Flight Details</h3>
+  <%= render 'booking_form', flight: @flight, num_passengers: @passengers %>
+</div>
