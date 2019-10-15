@@ -19,6 +19,10 @@ body {
   }
 }
 
+.booking-form {
+  margin-left: -15px;
+}
+
 .btn-primary {
   background-color: $form-gray;
   border-color: $button-border;
@@ -43,5 +47,5 @@ body {
   clear: both;
   float: left;
   width: 100%;
-  margin-top: 10%;
+  margin-top: 40px;
 }
