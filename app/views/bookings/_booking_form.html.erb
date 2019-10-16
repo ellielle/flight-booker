@@ -25,25 +25,27 @@
     <% unless @passengers.nil? || @passengers.blank? %>
       <% @passengers.to_i.times do |passenger| %>
         <%= fields_for :passenger do |field| %>
-        <div class="form-row">
-          <div class="passenger-info">
-            <%= "Passenger #{passenger.to_i + 1}" %>
+          <div class="booking-info">
+            <div class="form-row">
+              <div class="passenger-info">
+                <%= "Passenger #{passenger.to_i + 1}" %>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 field-col">
+                  <%= field.label :first_name %>
+                  <%= field.text_field :first_name, class: "form-control" %>
+                </div>
+                <div class="col-md-4 field-col">
+                  <%= field.label :last_name %>
+                  <%= field.text_field :last_name, class: "form-control" %>
+                </div>
+                <div class="col field-col" id="email-col">
+                  <%= field.label :email %>
+                  <%= field.email_field :email, class: "form-control" %>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <div class="col-md-4 field-col">
-              <%= field.label :first_name %>
-              <%= field.text_field :first_name, class: "form-control" %>
-            </div>
-            <div class="col-md-4 field-col">
-              <%= field.label :last_name %>
-              <%= field.text_field :last_name, class: "form-control" %>
-            </div>
-            <div class="col field-col" id="email-col">
-              <%= field.label :email %>
-              <%= field.email_field :email, class: "form-control" %>
-            </div>
-          </div>
-        </div>
         <% end %>
       <% end %>
     <% end %>
