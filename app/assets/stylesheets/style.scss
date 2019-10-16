@@ -24,11 +24,10 @@ label {
 }
 
 .btn-passenger {
-  margin-left: 15px;
   margin-right: 30px;
 }
 
-.passenger-info {
+.passenger-info, .btn-passenger, #email-col {
   margin-left: 15px;
 }
 
@@ -37,7 +36,6 @@ label {
 }
 
 #email-col {
-  margin-left: 15px;
   width: 40%;
 }
 
@@ -45,6 +43,9 @@ label {
   margin-left: -15px;
 }
 
+.booking-info {
+  margin-bottom: 30px;
+}
 .btn-primary {
   background-color: $form-gray;
   border-color: $button-border;
