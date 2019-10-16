@@ -12,11 +12,33 @@ body {
 }
 
 /* Forms */
-.search-form {
-  label {
-    color: $form-gray;
-    font-weight: 400;
+label {
+  color: $form-gray;
+  font-weight: 400;
+}
+
+.flight-info {
+  .form-control {
+    cursor: default;
   }
+}
+
+.btn-passenger {
+  margin-left: 15px;
+  margin-right: 30px;
+}
+
+.passenger-info {
+  margin-left: 15px;
+}
+
+.field-col {
+  width: 25%;
+}
+
+#email-col {
+  margin-left: 15px;
+  width: 40%;
 }
 
 .booking-form {
