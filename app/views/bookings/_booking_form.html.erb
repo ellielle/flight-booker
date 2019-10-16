@@ -24,7 +24,7 @@
     </div>
     <% unless @passengers.nil? || @passengers.blank? %>
       <% @passengers.to_i.times do |passenger| %>
-        <%= fields_for :passenger do |field| %>
+        <%= fields_for "passenger#{passenger.to_i}".to_sym do |field| %>
           <div class="booking-info">
             <div class="form-row">
               <div class="passenger-info">
