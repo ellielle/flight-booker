@@ -9,11 +9,11 @@ end
 
 # Create Airports
 airport1 = Airport.create!(name: "LaGuardia Airport", code: "LGA")
-airport2 = Airport.create!(name: "John F. Kennedy International Airport", code: "JFK")
-airport3 = Airport.create!(name: "San Francisco International Airport", code: "SFO")
+airport2 = Airport.create!(name: "John F. Kennedy Intl. Airport", code: "JFK")
+airport3 = Airport.create!(name: "San Francisco Intl. Airport", code: "SFO")
 airport4 = Airport.create!(name: "Heathrow", code: "LHR")
 airport5 = Airport.create!(name: "Gatwick", code: "LGW")
-airport6 = Airport.create!(name: "Los Angeles International", code: "LAX")
+airport6 = Airport.create!(name: "Los Angeles Intl.", code: "LAX")
 
 # Populate Flights
 flight_arr = [airport1, airport2, airport3, airport4, airport5, airport6]
