@@ -11,4 +11,6 @@ class Passenger < ApplicationRecord
   def downcase_email
     email.downcase!
   end
+
+  # TODO remember to downcase any searches for email
 end
