@@ -1,5 +1,5 @@
 <div class="booking-form">
-  <%= form_with model: Booking.new, url: bookings_path, local: true, method: :post do |f| %>
+  <%= form_with model: @booking, url: bookings_path, local: true, method: :post do |f| %>
     <div class="form-row flight-info">
       <div class="form-group col-md-3">
         <%= f.label :flight_number %>
@@ -22,32 +22,28 @@
                          value: format_date_time(flight.departure) %>
       </div>
     </div>
-    <% unless @passengers.nil? || @passengers.blank? %>
-      <% @passengers.to_i.times do |passenger| %>
-        <%= f.fields_for "passenger#{passenger.to_i}".to_sym do |field| %>
-          <div class="booking-info">
-            <div class="form-row">
-              <div class="passenger-info">
-                <%= "Passenger #{passenger.to_i + 1}" %>
-              </div>
-              <div class="form-group">
-                <div class="col-md-4 field-col">
-                  <%= field.label :first_name %>
-                  <%= field.text_field :first_name, class: "form-control", required: true %>
-                </div>
-                <div class="col-md-4 field-col">
-                  <%= field.label :last_name %>
-                  <%= field.text_field :last_name, class: "form-control", required: true %>
-                </div>
-                <div class="col field-col" id="email-col">
-                  <%= field.label :email %>
-                  <%= field.email_field :email, class: "form-control", required: true %>
-                </div>
-              </div>
+    <%= f.fields_for :passengers do |field| %>
+      <div class="booking-info">
+        <div class="form-row">
+          <div class="passenger-info">
+            <%= "Passenger" %>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 field-col">
+              <%= field.label :first_name %>
+              <%= field.text_field :first_name, class: "form-control", required: true %>
+            </div>
+            <div class="col-md-4 field-col">
+              <%= field.label :last_name %>
+              <%= field.text_field :last_name, class: "form-control", required: true %>
+            </div>
+            <div class="col field-col" id="email-col">
+              <%= field.label :email %>
+              <%= field.email_field :email, class: "form-control", required: true %>
             </div>
           </div>
-        <% end %>
-      <% end %>
+        </div>
+      </div>
     <% end %>
     <%= f.submit "Submit Information", class: "btn btn-primary btn-passenger" %>
     <%#= f.submit "Change Details", class: "btn btn-primary" %>

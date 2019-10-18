@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
   def new
+    @booking = Booking.new
     @flight = Flight.where(id: params[:results][:chosen_flight]).first
-    @passengers = params[:results][:num_passengers]
+    params[:results][:num_passengers].to_i.times { @booking.passengers.build }
   end
 
   def create
