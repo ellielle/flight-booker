@@ -3,8 +3,8 @@ class Passenger < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   before_save :downcase_email
-  has_many :bookings, foreign_key: :booking_id
-  has_many :scheduled_flights, through: :bookings, source: :scheduled_flight
+  has_many :bookings
+  has_many :flights, through: :bookings
 
   private
 
