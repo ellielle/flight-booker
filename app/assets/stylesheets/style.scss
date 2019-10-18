@@ -23,12 +23,13 @@ label {
   }
 }
 
-.btn-passenger {
-  margin-right: 30px;
+.passenger-info, .btn-passenger, #email-col, .btn-restart {
+  margin-left: 15px;
 }
 
-.passenger-info, .btn-passenger, #email-col {
-  margin-left: 15px;
+.btn-restart {
+  margin-top: -56px;
+  margin-left: 180px;
 }
 
 .field-col {
