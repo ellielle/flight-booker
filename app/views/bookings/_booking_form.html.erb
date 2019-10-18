@@ -2,7 +2,7 @@
   <%= form_with model: @booking, url: bookings_path, local: true, method: :post do |f| %>
     <div class="form-row flight-info">
       <div class="form-group col-md-3">
-        <%= f.label :flight_number %>
+        <%= f.label :flight_id %>
         <%= f.text_field :flight_id, class: "form-control", disabled: true,
                          value: flight.id %>
       </div>
@@ -45,6 +45,7 @@
         </div>
       </div>
     <% end %>
+    <%= hidden_field_tag :flight_number, @flight.id %>
     <%= f.submit "Submit Information", class: "btn btn-primary btn-passenger" %>
   <% end %>
   <%= form_with scope: :restart, url: bookings_path, local: true do |f| %>
