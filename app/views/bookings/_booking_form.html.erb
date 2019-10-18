@@ -1,5 +1,5 @@
 <div class="booking-form">
-  <%= form_with scope: :flight, url: bookings_path, local: true, method: :post do |f| %>
+  <%= form_with model: Booking.new, url: bookings_path, local: true, method: :post do |f| %>
     <div class="form-row flight-info">
       <div class="form-group col-md-3">
         <%= f.label :flight_number %>
@@ -24,7 +24,7 @@
     </div>
     <% unless @passengers.nil? || @passengers.blank? %>
       <% @passengers.to_i.times do |passenger| %>
-        <%= fields_for "passenger#{passenger.to_i}".to_sym do |field| %>
+        <%= f.fields_for "passenger#{passenger.to_i}".to_sym do |field| %>
           <div class="booking-info">
             <div class="form-row">
               <div class="passenger-info">
@@ -33,15 +33,15 @@
               <div class="form-group">
                 <div class="col-md-4 field-col">
                   <%= field.label :first_name %>
-                  <%= field.text_field :first_name, class: "form-control" %>
+                  <%= field.text_field :first_name, class: "form-control", required: true %>
                 </div>
                 <div class="col-md-4 field-col">
                   <%= field.label :last_name %>
-                  <%= field.text_field :last_name, class: "form-control" %>
+                  <%= field.text_field :last_name, class: "form-control", required: true %>
                 </div>
                 <div class="col field-col" id="email-col">
                   <%= field.label :email %>
-                  <%= field.email_field :email, class: "form-control" %>
+                  <%= field.email_field :email, class: "form-control", required: true %>
                 </div>
               </div>
             </div>
@@ -50,7 +50,10 @@
       <% end %>
     <% end %>
     <%= f.submit "Submit Information", class: "btn btn-primary btn-passenger" %>
-    <%= f.submit "Change Details", class: "btn btn-primary" %>
+    <%#= f.submit "Change Details", class: "btn btn-primary" %>
+  <% end %>
+  <%= form_with scope: :restart, url: bookings_path, local: true do |f| %>
+    <%= f.submit "Change Details", class: "btn btn-primary btn-restart" %>
   <% end %>
 </div>
 
