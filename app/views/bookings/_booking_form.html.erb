@@ -46,12 +46,8 @@
       </div>
     <% end %>
     <%= f.submit "Submit Information", class: "btn btn-primary btn-passenger" %>
-    <%#= f.submit "Change Details", class: "btn btn-primary" %>
   <% end %>
   <%= form_with scope: :restart, url: bookings_path, local: true do |f| %>
     <%= f.submit "Change Details", class: "btn btn-primary btn-restart" %>
   <% end %>
 </div>
-
-<%= debug(local_assigns[:num_passengers]) %>
-<%= debug(local_assigns[:flight]) %>
