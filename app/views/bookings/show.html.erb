@@ -1,0 +1,22 @@
+<div class="booking-results">
+  <dt class="col-sm-3">Flight</dt>
+  <dd class="col-sm-9"><%= @booking.flight.id %></dd>
+  <dt class="col-sm-3">Departing</dt>
+  <dd class="col-sm-9"><%= @booking.flight.from_airport.name %></dd>
+  <dt class="col-sm-3">Arriving</dt>
+  <dd class="col-sm-9"><%= @booking.flight.to_airport.name %></dd>
+  <dt class="col-sm-3">Time</dt>
+  <dd class="col-sm-9"><%= format_date_time(@booking.flight.departure) %></dd>
+</div>
+<div class="booking-results-passengers">
+  <% @booking.passengers.each do |passenger| %>
+    <dt class="col-sm-3">Passenger</dt>
+    <dd class="col-sm-9">
+      <p><%= passenger.first_name %></p>
+      <p><%= passenger.last_name %></p>
+      <p><%= passenger.email %></p>
+    </dd>
+  <% end %>
+</div>
+
+<%= debug(@booking) %>
