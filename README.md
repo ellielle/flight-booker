@@ -15,4 +15,4 @@ The goal is to have a chance to work with more advanced forms while I develop th
 #### Installation:
 * Clone the repo
 * Run ```$ bundle install --without production``` to install dependencies
-* Run ```$ rails test``` to ensure all tests pass
+* Run ```$ rspec``` to ensure all tests pass
