@@ -24,6 +24,17 @@ class BookingsController < ApplicationController
     @booking = Booking.find_by(id: params[:id])
   end
 
+  def search
+    @email = params[:search_booking].downcase unless params[:search_booking].nil?
+    @booked_flight = Booking.where(id: Passenger.where("email = ?", @email)).first
+    if !@booked_flight.nil?
+      redirect_to booking_path(@booked_flight)
+    else
+      flash[:danger] = "There are no flights booked under this email."
+      redirect_to request.referrer
+    end
+  end
+
   private
 
   def booking_params
