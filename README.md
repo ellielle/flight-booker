@@ -15,4 +15,5 @@ The goal is to have a chance to work with more advanced forms while I develop th
 #### Installation:
 * Clone the repo
 * Run ```$ bundle install --without production``` to install dependencies
+* Run ```$ rails db:seed``` to add flights & airports
 * Run ```$ rspec``` to ensure all tests pass
