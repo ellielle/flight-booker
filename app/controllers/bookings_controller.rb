@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
       @flight = Flight.find_by(id: params[:flight_number])
       @booking = @flight.bookings.build(booking_params)
       if @booking&.save
-        #UserMailer.with(booking: @booking).deliver_later
+        PassengerMailer.with(booking: @booking).ticket_email.deliver_later
         flash[:success] = "Flight booked!"
         redirect_to booking_path(@booking)
       else
