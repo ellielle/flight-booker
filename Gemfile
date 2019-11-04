@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8.2'
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'capybara'
+
 end
 
 group :test do
@@ -33,6 +34,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener', '~> 1.7.0'
 end
 
 group :production do
