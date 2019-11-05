@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h4><%= @name %>,</h4>
+    <p>Here are the details of your upcoming flight:</p>
+    <p>
+      Flight: <%= @booking.flight.id %><br>
+      Departing: <%= @booking.flight.from_airport.name %><br>
+      Time: <%= @booking.flight.departure %><br>
+      Arriving: <%= @booking.flight.to_airport.name %><br>
+    </p>
+    <p>Thank you for booking with Simple Flights!.</p>
+    <p>If you wish to cancel your flight, too bad! All ticket sales are final.</p>
+  </body>
+</html>
